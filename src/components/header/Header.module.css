@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans&family=Roboto&display=swap');
+
+  .root {
+      flex-grow: 1;
+  }
+
+  .navLinks {
+      margin-right: 1rem !important; 
+  }
+
+  .shoppingCart {
+      margin-right: .5rem
+  }
+
+  .title{
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+  }
+  .logo{
+      margin-right: 3rem !important;
+      font-family: Amatic SC !important;
+  }

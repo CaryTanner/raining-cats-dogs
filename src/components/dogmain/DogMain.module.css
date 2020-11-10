@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans&family=Roboto&display=swap');
+
+
+.logo{
+    color: #404651;
+    margin: 20px auto !important;
+    font-family: Amatic SC !important;
+    align-self: center !important;
+}
+
+.formControl{
+    margin: 20px auto !important;
+    min-width: 200px !important;
+}
