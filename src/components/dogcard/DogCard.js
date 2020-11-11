@@ -9,26 +9,35 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
  import {fetchDogImage} from '../../api'
 import styles from './DogCard.module.css'
+import { useHistory } from "react-router-dom";
 
 
 export default function DogCard({breed}) {
     
-    console.log(breed)
+    
 
   const [dogPic, setDogPic] = useState('')
 
   useEffect(() => {
     const fetchAPI = async () => {
-      setDogPic(await fetchDogImage(breed.id));
+      setDogPic(await fetchDogImage(breed.id, 1));
     };
 
     fetchAPI();
   }, [breed]);
 
-  console.log(dogPic)
+   // logic of card click to send to individual page
+
+   let history = useHistory()
+
+   function handleClickLink(event) {
+    history.push(`/dogs/${event.currentTarget.id}`);
+  }
+
+  
 
   return (
-    <Card className={styles.root} >
+    <Card className={styles.root} onClick={handleClickLink} id={breed.id} >
       <CardActionArea>
        {dogPic ? <CardMedia
           className={styles.media}
@@ -45,9 +54,7 @@ export default function DogCard({breed}) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
+        
         <Button size="small" color="primary">
           Learn More
         </Button>

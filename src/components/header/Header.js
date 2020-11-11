@@ -1,28 +1,31 @@
 import React from "react";
-import { useTheme } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import Link from "@material-ui/core/Link"
-import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
-import { useMediaQuery } from "@material-ui/core";
+import {
+  useTheme,
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Link,
+  MenuItem,
+  Menu,
+  useMediaQuery,
+  Badge,
+  Button,
+  Grid
+} from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import Badge from "@material-ui/core/Badge";
-import { withRouter, useHistory } from 'react-router-dom'
+import MenuIcon from '@material-ui/icons/Menu';
 import FilterDramaIcon from '@material-ui/icons/FilterDrama';
+import { useHistory } from "react-router-dom";
+import CartItems from "../CartItems/CartItems";
 
-import styles from './Header.module.css';
+import styles from "./Header.module.css";
 
-
-
-const Header = () => {
-  
-
+const Header = ({ products, removeFromCart }) => {
+  //logic open hamburger menu & hide it on desktop
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
 
@@ -34,50 +37,81 @@ const Header = () => {
     setAnchorEl(null);
   };
 
+  //logic cart
+
+  const [anchorElCart, setAnchorElCart] = React.useState(null);
+  const openCart = Boolean(anchorElCart);
+
+  const handleMenuCart = (event) => {
+    setAnchorElCart(event.currentTarget);
+  };
+
+  const handleCloseCart = () => {
+    setAnchorElCart(null);
+  };
+
+  // router logic
   let history = useHistory();
-  
+
   function handleClickLink(path) {
     history.push(path);
   }
-  
 
   return (
     <div className={styles.root}>
       <AppBar position="static">
         <Toolbar>
-            <div className={styles.title}>
-          <Typography variant="h3" className={styles.logo}>
-          <FilterDramaIcon color='secondary' fontSize='large'/>
-             Raining C&amp;D
-          </Typography>
-          {isMobile ? null : (
-            <Typography  >
-              <Link href="/" color="inherit" onClick={() => handleClickLink('/')} className={styles.navLinks} variant='h6'>
-                Home
-              </Link>
-              <Link href="/dogs"  color="inherit" onClick={() => handleClickLink('/dogs')} className={styles.navLinks} variant="h6">
-                Dogs
-              </Link>
-              <Link href="/cats"  color="inherit" onClick={() => handleClickLink('/cats')} className={styles.navLinks} variant="h6">
-                Cats
-              </Link>
+          <div className={styles.title}>
+            <Typography onClick={() => handleClickLink("/")} variant="h3" className={styles.logo}>
+              <FilterDramaIcon color="secondary" fontSize="large" />
+              &nbsp;Raining&nbsp;C&amp;D
             </Typography>
-          )}
+            {isMobile ? null : (
+              <Typography>
+                <Link
+                  href="/"
+                  color="inherit"
+                  onClick={() => handleClickLink("/")}
+                  className={styles.navLinks}
+                  variant="h6"
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/dogs"
+                  color="inherit"
+                  onClick={() => handleClickLink("/dogs")}
+                  className={styles.navLinks}
+                  variant="h6"
+                >
+                  Dogs
+                </Link>
+                <Link
+                  href="/cats"
+                  color="inherit"
+                  onClick={() => handleClickLink("/cats")}
+                  className={styles.navLinks}
+                  variant="h6"
+                >
+                  Cats
+                </Link>
+              </Typography>
+            )}
           </div>
 
           <IconButton
-            onClick={handleMenu}
+            onClick={handleMenuCart}
             edge="end"
             className={styles.shoppingCart}
             color="inherit"
           >
-            <Badge color="secondary" badgeContent={0} showZero>
+            <Badge color="secondary" badgeContent={products.length} >
               <ShoppingCartIcon />
             </Badge>
           </IconButton>
           <Menu
             id="menu-appbar"
-            anchorEl={anchorEl}
+            anchorEl={anchorElCart}
             anchorOrigin={{
               vertical: "top",
               horizontal: "right",
@@ -87,14 +121,23 @@ const Header = () => {
               vertical: "top",
               horizontal: "right",
             }}
-            open={open}
-            onClose={handleClose}
+            open={openCart}
+            onClose={handleCloseCart}
           >
-            <MenuItem onClick={handleClose}>Cart stuff</MenuItem>
-            <MenuItem onClick={handleClose}>Bought things</MenuItem>
+            <MenuItem >
+              {products.length > 0 ? <CartItems products={products} removeFromCart={removeFromCart} /> : <Typography variant="body1">Cart is empty</Typography> }
+            </MenuItem>
+            <MenuItem >
+            <Grid container justify="space-evenly">
+              <Grid item>
+              {products.length > 0 ? <Button onClick={() => handleClickLink("/checkout")} variant="contained" color="secondary" >Checkout</Button> : null}
+              </Grid>
+              <Grid item>
+              <Button onClick={handleCloseCart}variant="outlined" color="Primary">Close</Button>
+              </Grid>
+              </Grid>
+            </MenuItem>
           </Menu>
-
-          
 
           {isMobile ? (
             <div>
@@ -122,9 +165,13 @@ const Header = () => {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={() => handleClickLink('/')}>Home</MenuItem>
-                <MenuItem onClick={() => handleClickLink('/dogs')}>Dogs</MenuItem>
-                <MenuItem onClick={() => handleClickLink('/cats')}>Cats</MenuItem>
+                <MenuItem onClick={() => handleClickLink("/")}>Home</MenuItem>
+                <MenuItem onClick={() => handleClickLink("/dogs")}>
+                  Dogs
+                </MenuItem>
+                <MenuItem onClick={() => handleClickLink("/cats")}>
+                  Cats
+                </MenuItem>
               </Menu>
             </div>
           ) : null}
@@ -132,6 +179,6 @@ const Header = () => {
       </AppBar>
     </div>
   );
-}
+};
 
-export default Header
+export default Header;

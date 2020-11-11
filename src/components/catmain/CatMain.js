@@ -1,39 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import {
+  Typography,
+  Container,
+  InputLabel,
+  MenuItem,
+  FormControl,
+  Select,
+  Grid,
+} from "@material-ui/core";
 
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import Grid from "@material-ui/core/Grid";
-
-import CatCard from "../catcard/CatCard";
-import { useHistory } from 'react-router-dom'
+import CatCard from "../CatCard/CatCard";
+import { useHistory } from "react-router-dom";
 import styles from "./CatMain.module.css";
 
 export default function CatMain({ catBreeds }) {
   const [selectedBreed, setBreeds] = useState("");
   const [selectedBreedID, setBreedsID] = useState("");
 
-  //get all breeds and filter to selected letter
-  
   let history = useHistory();
 
-  useEffect(() => {}, []);
+  // breed picker sends user to specific page
 
   const handleChange = (event) => {
     setBreeds(event.target.value);
     setBreedsID(event.currentTarget.id);
-    history.push(`/cats/${event.currentTarget.id}`)
+    history.push(`/cats/${event.currentTarget.id}`);
   };
-  
-  
-  
-  // function handleClickLink(path) {
-  //   history.push(path);
-  // }
 
+  
   return (
     <>
       <Container>
@@ -44,13 +38,13 @@ export default function CatMain({ catBreeds }) {
           alignItems="center"
           spacing={1}
         >
-          <Grid item>
+          <Grid item >
             <Typography variant="h1" align="center" className={styles.logo}>
               Cats
             </Typography>
 
             <FormControl className={styles.formControl}>
-              <InputLabel id="breed-selector-label">Breed</InputLabel>
+              <InputLabel id="breed-selector-label">Breeds</InputLabel>
               <Select
                 labelId="breed-selector-label"
                 id=""
@@ -59,8 +53,7 @@ export default function CatMain({ catBreeds }) {
               >
                 {catBreeds
                   ? catBreeds.map((breed) => (
-                      <MenuItem id={breed.id} value={breed.name}>
-                        {" "}
+                      <MenuItem key={breed.id} id={breed.id} value={breed.name}>
                         {breed.name}
                       </MenuItem>
                     ))
@@ -68,18 +61,15 @@ export default function CatMain({ catBreeds }) {
               </Select>
             </FormControl>
           </Grid>
-          <Grid
-           justify="center"
-           alignItems="center"
-            container
-            item
-            spacing={2}
-          >
+          <Grid container item spacing={3}>
             {catBreeds
               ? catBreeds.map((breed) => (
-                  <Grid item xs={12} sm={6} md={3}>
-                    {" "}
-                    <CatCard breed={breed} />
+                  <Grid  align="center" item key={breed.id} xs={12} sm={6} md={3}>
+                    <CatCard
+                      className={styles.card}
+                      id={breed.id}
+                      breed={breed}
+                    />
                   </Grid>
                 ))
               : null}

@@ -8,7 +8,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Grid from "@material-ui/core/Grid";
 import { withRouter, useHistory } from 'react-router-dom'
-import DogCard from "../dogcard/DogCard";
+import DogCard from "../DogCard/DogCard";
 
 
 import styles from "./DogMain.module.css";
@@ -19,7 +19,7 @@ export default function DogMain({ dogBreeds }) {
 
   //get all breeds and filter to selected letter
   useEffect(() => {}, []);
-  
+
  let history = useHistory()
 
   const handleChange = (event) => {
@@ -52,7 +52,7 @@ export default function DogMain({ dogBreeds }) {
             
             
             <FormControl className={styles.formControl}>
-              <InputLabel id="breed-selector-label">Breed</InputLabel>
+              <InputLabel id="breed-selector-label">Breeds</InputLabel>
               <Select
                 labelId="breed-selector-label"
                 id=""
@@ -61,7 +61,7 @@ export default function DogMain({ dogBreeds }) {
               >
                 {dogBreeds
                   ? dogBreeds.map((breed) => (
-                      <MenuItem id={breed.id} value={breed.name}>
+                      <MenuItem key={breed.id} id={breed.id} value={breed.name}>
                         {" "}
                         {breed.name}
                       </MenuItem>
@@ -74,7 +74,7 @@ export default function DogMain({ dogBreeds }) {
           <Grid container item  spacing={2}>
             {dogBreeds
               ? dogBreeds.map((breed) => (
-                  <Grid item xs={12} sm={6} md={3}>
+                  <Grid item align="center" key={breed.id} xs={12} sm={6} md={3}>
                     {" "}
                     <DogCard breed={breed} />
                   </Grid>
