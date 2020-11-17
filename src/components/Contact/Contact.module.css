@@ -1,0 +1,68 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Oswald&family=Open+Sans&family=Roboto&display=swap");
+
+
+
+.form{
+    min-height: 500px;
+    color: var(--main-dark);
+    padding: 1rem;
+    margin-top: 3rem;
+}
+
+
+
+.infoSection{
+    min-height: 500px;
+    background-image: url("../../Images/wall-cat.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -ms-border-radius:3px;
+    -o-border-radius:3px;
+    margin-top: 3rem !important; 
+    padding: 1rem;
+    
+
+
+}
+
+.information{
+    color: var(--main-dark);
+    
+  letter-spacing: -1px !important;
+  
+  line-height: .9 !important;
+}
+
+.links{
+    color: var(--main-dark);
+    text-decoration: none;
+    font-family: "Roboto", Helvetica, sans-serif;
+    margin: .5rem 0;
+    transition: 900ms;
+        -webkit-transition: 900ms;
+        -moz-transition: 900ms;
+        -ms-transition: 900ms;
+        -o-transition: 900ms;
+}
+
+.links:hover{
+    
+        text-decoration: underline;
+        transition: 900ms;
+        -webkit-transition: 900ms;
+        -moz-transition: 900ms;
+        -ms-transition: 900ms;
+        -o-transition: 900ms;
+        
+   
+}
+
+.links:visited{
+    color: var(--main-dark)
+}

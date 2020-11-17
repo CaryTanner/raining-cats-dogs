@@ -51,18 +51,7 @@ export default function PaymentForm({ setActiveStep, email, firstName }) {
 
   return (
     <>
-    <Snackbar
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
-        }}
-        open={openSnackbar}
-        autoHideDuration={6000}
-        onClose={handleCloseSnackbar}
-        
-        message={`Thanks, ${firstName}. We'll contact you ASAP!`}
-        
-        />
+    
 
       <Grid container xs={12} justify="center" alignItems="center" className={styles.form}>
         <FormControl component="fieldset" >
@@ -130,6 +119,18 @@ export default function PaymentForm({ setActiveStep, email, firstName }) {
           
         </DialogActions>
       </Dialog>
+      <Snackbar
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'center',
+        }}
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        
+        message={`Thanks, ${firstName}. We'll contact you ASAP!`}
+        
+        />
       
     </>
   );

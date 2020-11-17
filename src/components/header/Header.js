@@ -16,7 +16,7 @@ import {
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import MenuIcon from '@material-ui/icons/Menu';
 import FilterDramaIcon from '@material-ui/icons/FilterDrama';
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import CartItems from "../CartItems/CartItems";
 
 import styles from "./Header.module.css";

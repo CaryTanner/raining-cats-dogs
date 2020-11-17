@@ -21,11 +21,7 @@ export default function Home({ catBreeds, dogBreeds }) {
         <Typography variant="h2" className={styles.tagline}>
             PUREBRED <br/> CATS&nbsp;&amp;&nbsp;DOGS
           </Typography>
-        {/* <Typography variant="h5" className={styles.subTagline}>
-            Raised with love. Delivered with care.
-          </Typography>
-           */}
-          
+        
           <Button
             href="/cats"
             variant="contained"
@@ -102,6 +98,7 @@ export default function Home({ catBreeds, dogBreeds }) {
             </Button>
           </Grid>
         </Grid>
+        
         <Grid
           item
           container
@@ -125,7 +122,9 @@ export default function Home({ catBreeds, dogBreeds }) {
             </Button>
           </Grid>
         </Grid>
-        <Grid
+        
+      </Grid>
+      <Grid
           item
           container
           xs={12}
@@ -169,7 +168,7 @@ export default function Home({ catBreeds, dogBreeds }) {
             </Grid>
           ) : null}
         </Grid>
-      </Grid>
+        
     </>
   );
 }
