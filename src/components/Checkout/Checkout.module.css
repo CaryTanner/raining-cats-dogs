@@ -12,11 +12,16 @@
     color: var(--main-dark) !important; 
 }
 
-.itemSection{
+.paperSection{
     color: var(--main-dark);
-    min-height: 80vh !important;
+    min-height: 400px !important;
     padding: 1rem .5rem !important;
 }
+
+.cartName{
+    color: var(--main-dark) !important;
+}
+
 
 
 

@@ -6,7 +6,7 @@
 
 
 .animalName{
-    color: var(--main-dark)
+    color: var(--main-dark) !important;
 }
 
 
@@ -28,8 +28,8 @@ image {
 }
 
 .emptyCart{
-    
-    min-height: 60vh !important;
+    color: var(--main-dark) !important;
+    min-height: 300px !important;
     padding: 1rem .5rem !important;
 }
 

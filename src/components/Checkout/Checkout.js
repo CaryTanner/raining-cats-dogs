@@ -14,6 +14,9 @@ import {
   Step,
   useTheme,
   useMediaQuery,
+  Paper,
+  Backdrop,
+  CircularProgress
 } from "@material-ui/core";
 
 export default function Checkout({
@@ -42,14 +45,17 @@ export default function Checkout({
 
   //shipping form data
   
-  const [formData, setFormData] = useState({firstName: "", lastName:"", email: "", address: "", shipping: "" })
+  const [formData, setFormData] = useState({firstName: "", lastName:"", email: "", address: "", city:"", shipping: "" })
 
-  console.log(formData)
+  
 
   return (
     <>
+    
+    
       <div className={styles.container}>
-        <Grid container justify="center">
+      
+        <Grid container justify="center" spacing={2}>
           <Grid
             item
             xs={12}
@@ -85,11 +91,12 @@ export default function Checkout({
             item
             md={7}
             xs={12}
-            className={styles.itemSection}
+            
             container
             direction="column"
           >
-            <Typography variant="h6" align="Left">
+              <Paper className={styles.paperSection}>
+            <Typography variant="h6" align="Left" className={styles.cartName}>
               {step.activeStep === 0
                 ? "Cart"
                 : step.activeStep === 1
@@ -108,14 +115,19 @@ export default function Checkout({
             ) : step.activeStep === 1 ? (
               <ShippingForm setActiveStep={setActiveStep} cartItems={cartItems} formData={formData} setFormData={setFormData} />
             ) : (
-              <PaymentForm setActiveStep={setActiveStep} cartItems={cartItems} />
+              <PaymentForm setActiveStep={setActiveStep}  firstName={formData.firstName} email={formData.email}/>
             )}
+            </Paper>
           </Grid>
           <Grid item md={4} xs={12}>
-            <CheckoutOrderSummary cartItems={cartItems} />
+              <Paper className={styles.paperSection}>
+            <CheckoutOrderSummary cartItems={cartItems} formData={formData} />
+            </Paper>
           </Grid>
         </Grid>
+        
       </div>
+      
     </>
   );
 }

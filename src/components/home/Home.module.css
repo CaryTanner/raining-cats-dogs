@@ -52,9 +52,12 @@
   background-position: center;
   background-size: cover;
   margin-top: 1rem !important;
-  
   padding: 1rem;
-  
+  border-radius:7px;
+  -webkit-border-radius:7px;
+  -moz-border-radius:7px;
+  -ms-border-radius:7px;
+  -o-border-radius:7px;
 }
 .firstSectionAText{
     font-family:  var(--oswald) !important;
@@ -72,6 +75,11 @@
   background-size: cover;
   margin-top: 1rem !important;
   padding: 1rem;
+  border-radius:7px;
+  -webkit-border-radius:7px;
+  -moz-border-radius:7px;
+  -ms-border-radius:7px;
+  -o-border-radius:7px;
 }
 
 .firstSectionBText{
@@ -90,6 +98,11 @@
   background-size: cover;
   margin-top: 1rem !important;
   padding: 1rem;
+  border-radius:7px;
+  -webkit-border-radius:7px;
+  -moz-border-radius:7px;
+  -ms-border-radius:7px;
+  -o-border-radius:7px;
 
 }
 
@@ -117,6 +130,11 @@
     background-position: center;
     background-size: cover;
     padding: 2rem 0 0 5vw !important;
+    border-radius:7px;
+  -webkit-border-radius:7px;
+  -moz-border-radius:7px;
+  -ms-border-radius:7px;
+  -o-border-radius:7px;
 }
 
 .secondSectionATextTitle{

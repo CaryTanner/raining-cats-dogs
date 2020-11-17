@@ -7,8 +7,9 @@ import { useHistory } from "react-router-dom";
 
 
 export default function AddToCart({item, addToCart}){
-    
+    //item count
     const [count, setCount] = useState(1)
+    // open snackbar
     const [open, setOpen] = useState(false);
 
 //logic snackbar
@@ -28,6 +29,7 @@ export default function AddToCart({item, addToCart}){
 
         setOpen(false)
     }
+    
     // router logic
   let history = useHistory();
 
@@ -45,7 +47,7 @@ export default function AddToCart({item, addToCart}){
         autoHideDuration={6000}
         onClose={handleClose}
         message={`Success! ${item ? item.name : null} added to cart.`}
-        className={styles.snackbar}
+        
         action={
           <>
             <Button color="secondary" size="small" onClick={()=> handleClickLink("/checkout")}>

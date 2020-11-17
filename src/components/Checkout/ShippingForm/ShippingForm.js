@@ -5,6 +5,7 @@ import {
   FormLabel,
   FormControlLabel,
   Radio,
+  Paper
 } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
@@ -20,24 +21,30 @@ export default function ShippingForm({
   cartItems,
   formData,
   setFormData,
-}) {
-  const { firstName, lastName, email, address, shipping } = formData;
+}) 
+    {
+
+  // shiping form values and submit -state is stored in Checkout.js 
+
+  const { firstName, lastName, email, address, city, shipping } = formData;
 
   const handleSubmit = (values) => {
     if (values) {
-      const { firstName, lastName, email, address, shipping } = values;
+      const { firstName, lastName, email, address, city, shipping } = values;
       setActiveStep({ type: "increment" });
-      setFormData({ firstName, lastName, email, address, shipping });
-      console.log(values);
+      setFormData({ firstName, lastName, email, address, city, shipping });
+      
       return;
     }
   };
+
+  
   
 
   return (
     <>
       <Formik
-        initialValues={{ firstName, lastName, email, address, shipping }}
+        initialValues={{ firstName, lastName, email, address, city, shipping }}
         validationSchema={Yup.object({
           firstName: Yup.string()
 
@@ -55,61 +62,78 @@ export default function ShippingForm({
             .email("Invalid email address")
             .required("Required"),
           address: Yup.string().required("Required"),
+          city: Yup.string().required("Required"),
           shipping: Yup.string().required("Required"),
         })}
         onSubmit={(values) => handleSubmit(values)}
       >
         <Form>
-          <Grid container xs={12} align="center"  spacing={3}>
-            <Grid item xs={12} >
-                
+            
+          <Grid container xs={12}  spacing={3}>
+            
+              <Grid item md={6} xs={12}> 
               <Field
                 component={TextField}
                 name="firstName"
                 type="text"
                 label="First Name"
-                className={styles.input}
-                
+                clas
+                //inline-styles && extra div's used as formik components don't seem to respond to className based css  
+                style={{width: '100%'}}
                 
               />
-              
-            </Grid>
-            <Grid item>
+              </Grid> 
+           
+              <Grid item md={6} xs={12}> 
               <Field
                 component={TextField}
                 name="lastName"
                 type="text"
                 label="Last Name"
-                className={styles.input}
+                
+                style={{width: '100%'}}
               />
             </Grid>
-            <Grid item>
+
+            <Grid item md={6} xs={12} >
               <Field
                 component={TextField}
                 name="email"
                 type="email"
                 label="Email"
-                className={styles.input}
+                
+                style={{width: '100%'}}
               />
             </Grid>
-            <Grid item>
+            <Grid item md={6} xs={12}>
               <Field
                 component={TextField}
                 name="address"
                 type="text"
                 label="Address"
-                className={styles.input}
+                
+                style={{width: '100%'}}
               />
             </Grid>
-            <Grid item  >
-                <div className={styles.shippingOptions}>
+            <Grid item md={6} xs={12}>
+              <Field
+                component={TextField}
+                name="city"
+                type="text"
+                label="City"
+                
+                style={{width: '100%'}}
+              />
+            </Grid>
+            <Grid item md={6} xs={12} >
+                
                 <FormLabel component="body1" >Shipping Options</FormLabel>
               
               <Field
                 component={RadioGroup}
                 name="shipping"
                 type="radio"
-                className={styles.input}
+                
                 defaultValue={shipping ? shipping : null}
                 
               >
@@ -117,21 +141,21 @@ export default function ShippingForm({
                   
                   value="standard" 
                   control={<Radio color="primary" />}
-                  label="Standard"
+                  label="Standard: Free Shipping"
                   labelPlacement="end"
                 />
                 <FormControlLabel
                   
                   value="express" 
                   control={<Radio color="primary" />}
-                  label="Express"
+                  label="Express: Max. One Week Delivery +$30"
                   labelPlacement="end"
                 />
                 <div className={styles.shippingError}>
                <ErrorMessage name="shipping"  />
                </div>
               </Field>
-              </div>
+              
             </Grid>
             <Grid item container xs={12} justify="space-around">
               <Button
@@ -155,6 +179,7 @@ export default function ShippingForm({
               </Button>
             </Grid>
           </Grid>
+          
         </Form>
       </Formik>
     </>
