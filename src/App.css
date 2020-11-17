@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Oswald&family=Open+Sans&family=Roboto&display=swap');
 
 
 :root {
@@ -6,6 +6,7 @@
   --main-dark: #404651;
   --main-blue: #6ccdf0;
   --main-brown: #ffb354;
+  --oswald: Oswald;
 
 }
 body{

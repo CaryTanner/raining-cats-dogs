@@ -16,7 +16,7 @@ import {
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import MenuIcon from '@material-ui/icons/Menu';
 import FilterDramaIcon from '@material-ui/icons/FilterDrama';
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import CartItems from "../CartItems/CartItems";
 
 import styles from "./Header.module.css";
@@ -28,6 +28,7 @@ const Header = ({ products, removeFromCart }) => {
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
+  const cloudLogoSize = (isMobile ? "medium" : "large");
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -52,9 +53,10 @@ const Header = ({ products, removeFromCart }) => {
 
   // router logic
   let history = useHistory();
-
+  
   function handleClickLink(path) {
-    history.push(path);
+    handleClose()
+    history.push(path);  
   }
 
   return (
@@ -62,9 +64,8 @@ const Header = ({ products, removeFromCart }) => {
       <AppBar position="static">
         <Toolbar>
           <div className={styles.title}>
-            <Typography onClick={() => handleClickLink("/")} variant="h3" className={styles.logo}>
-              <FilterDramaIcon color="secondary" fontSize="large" />
-              &nbsp;Raining&nbsp;C&amp;D
+            <Typography onClick={() => handleClickLink("/")} variant="h4" className={styles.logo}>
+              <FilterDramaIcon color="secondary" fontSize={cloudLogoSize} />&nbsp;Raining&nbsp;Cats&nbsp;&amp;&nbsp;Dogs
             </Typography>
             {isMobile ? null : (
               <Typography>
@@ -95,6 +96,15 @@ const Header = ({ products, removeFromCart }) => {
                 >
                   Cats
                 </Link>
+                <Link
+                  href="/contact"
+                  color="inherit"
+                  onClick={() => handleClickLink("/contact")}
+                  className={styles.navLinks}
+                  variant="h6"
+                >
+                  Contact
+                </Link>
               </Typography>
             )}
           </div>
@@ -105,7 +115,7 @@ const Header = ({ products, removeFromCart }) => {
             className={styles.shoppingCart}
             color="inherit"
           >
-            <Badge color="secondary" badgeContent={products.length} >
+            <Badge color="secondary" badgeContent={products.length} showZero>
               <ShoppingCartIcon />
             </Badge>
           </IconButton>
@@ -130,10 +140,10 @@ const Header = ({ products, removeFromCart }) => {
             <MenuItem >
             <Grid container justify="space-evenly">
               <Grid item>
-              {products.length > 0 ? <Button onClick={() => handleClickLink("/checkout")} variant="contained" color="secondary" >Checkout</Button> : null}
+              {products.length > 0 ? <Button onClick={() => handleClickLink("/checkout")} variant="contained" className={styles.checkoutButton}>Checkout</Button> : null}
               </Grid>
               <Grid item>
-              <Button onClick={handleCloseCart}variant="outlined" color="Primary">Close</Button>
+              <Button onClick={handleCloseCart}variant="outlined" color="secondary">Close</Button>
               </Grid>
               </Grid>
             </MenuItem>
@@ -171,6 +181,9 @@ const Header = ({ products, removeFromCart }) => {
                 </MenuItem>
                 <MenuItem onClick={() => handleClickLink("/cats")}>
                   Cats
+                </MenuItem>
+                <MenuItem onClick={() => handleClickLink("/contact")}>
+                  Contact
                 </MenuItem>
               </Menu>
             </div>

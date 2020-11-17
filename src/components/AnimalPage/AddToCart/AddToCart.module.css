@@ -1,0 +1,10 @@
+.textField{
+    width: 10ch !important;
+    margin: 0 0 1rem 1rem !important;
+}
+
+.addToCartButton{
+    margin-left: 1rem !important;
+    background-color: var(--main-brown) !important ;
+}
+

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans&family=Roboto&display=swap');
+
+.container{
+    min-height: 100vh !important;
+}
+
+.stepperSection{
+    font-family:  var(--oswald) !important;
+    letter-spacing: -2px !important;
+    background-color: var(--main-bg) !important;
+    margin-top: 1rem !important;
+    color: var(--main-dark) !important; 
+}
+
+.itemSection{
+    color: var(--main-dark);
+    min-height: 80vh !important;
+    padding: 1rem .5rem !important;
+}
+
+
+
+
+
+
+

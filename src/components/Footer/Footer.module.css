@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans&family=Roboto&display=swap');
+
+.footer{
+    margin-top: 4rem;
+    padding: 2rem 4rem; 
+    background-color: var(--main-dark) ;
+    min-height: 300px;
+}
+.title{
+    margin-top: 1.5rem;
+    color: var(--main-bg) !important;
+    font-family: Roboto;
+    font-weight: 900;
+}
+.text{
+    color: var(--main-bg) !important;
+    font-family: Roboto;
+    margin: .4rem 0 !important;
+}
+
+.links{
+    text-decoration: none;
+    color:var(--main-bg) ;
+    font-family: Roboto !important;
+    margin: .4rem 0 !important;
+    
+}
+
+.links:hover{
+    
+    cursor: pointer;
+    color: var(--main-brown);
+    text-decoration: none !important;
+    transition: 300ms !important    ;
+    -webkit-transition: 300ms !important    ;
+    -moz-transition: 300ms !important    ;
+    -ms-transition: 300ms !important    ;
+    -o-transition: 300ms !important    ;
+}
+
+.input{
+    background-color: var(--main-bg)!important;
+    margin: .5rem 0 !important;
+    border-radius: 5px;;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+@media only screen and (max-width: 800px) {
+    .footer{
+        padding: 1rem;
+    } 
+  }
+
+.social{
+    color: var(--main-bg) ;
+    margin: 0 .25rem;
+}
+
+.social:hover{
+    
+    cursor: pointer;
+    color: var(--main-brown);
+    text-decoration: none !important;
+    transition: 300ms !important    ;
+    -webkit-transition: 300ms !important    ;
+    -moz-transition: 300ms !important    ;
+    -ms-transition: 300ms !important    ;
+    -o-transition: 300ms !important    ;
+}

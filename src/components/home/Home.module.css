@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Oswald&family=Open+Sans&family=Roboto&display=swap");
+
+
+
+/* ** Hero pic ** */
+.heroPic {
+  height: 100vh;
+  background: url("../../Images/dog-eyes.jpg");
+  background-repeat: no-repeat;
+  background-position-y: 80%;
+  background-size: cover;
+  margin: 0.5rem 0 !important;
+}
+
+.tagline {
+  font-family:  var(--oswald) !important;
+  letter-spacing: -2px !important;
+  font-size: 6rem !important;
+  line-height: .9 !important;
+  
+  margin: 1.5rem 0 0 5vw !important;
+}
+
+.subTagline {
+  /* font-family: Amatic SC !important; */
+  color: var(--main-dark);
+  margin: 2rem 0 0 5vw !important;
+}
+
+.button1 {
+  background-color: var(--main-brown) !important;
+  margin: 2.5rem 1rem 0 5vw !important;
+}
+
+.button2 {
+  background-color: var(--main-brown) !important;
+  margin: 2.5rem 0 0 0 !important;
+}
+
+/* ***  Card Section *** */
+
+.firstSection{
+    
+    padding: 2rem 0;
+    
+}
+
+.firstSectionA {
+  height: 440px;
+  background-image:  linear-gradient(180deg, rgba(255,179,84,1) 0%, rgba(253,249,243,0.31834740732230393) 100%), url("../../Images/pexels-gilberto-reyes-825947.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-top: 1rem !important;
+  
+  padding: 1rem;
+  
+}
+.firstSectionAText{
+    font-family:  var(--oswald) !important;
+    line-height: .9 !important;
+    letter-spacing: -2px !important;
+    color: var(--main-bg) !important; 
+    
+} 
+
+.firstSectionB{
+    height: 440px;
+    background-image: url("../../Images/wink-puppy.jpg");
+    background-repeat: no-repeat;
+  background-position-y: 30%;
+  background-size: cover;
+  margin-top: 1rem !important;
+  padding: 1rem;
+}
+
+.firstSectionBText{
+    font-family:  var(--oswald) !important;
+    line-height: .9 !important;
+    letter-spacing: -2px !important;
+    color: #404651 !important;
+    
+} 
+
+.firstSectionC{
+    height: 440px;
+    background-image: url("../../Images/chill-kitten.jpg");
+    background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  margin-top: 1rem !important;
+  padding: 1rem;
+
+}
+
+.firstSectionCText{
+    font-family:  var(--oswald) !important;
+    line-height: .9 !important;
+    letter-spacing: -2px !important;
+    color: var(--main-dark) !important;
+    
+} 
+
+.firstSectionButton{
+    max-width: 135px !important;
+}
+
+
+/* *** Article Section  *** */
+.articleSection{
+    margin: 2rem 0 !important;
+}
+.secondSectionA{
+    height: 500px;
+    background-image: url("../../Images/pexels-pixabay-209037.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 2rem 0 0 5vw !important;
+}
+
+.secondSectionATextTitle{
+    
+    line-height: .8 !important;
+    letter-spacing: -5px !important;
+    color: var(--main-bg) !important; 
+    margin-bottom: 3rem !important;
+
+
+}
+.secondSectionAText{
+    line-height: .8 !important;
+    letter-spacing: -2px !important;
+    color: var(--main-bg) !important; 
+    margin-bottom: 3rem !important;
+
+
+}
+
+
+/* Random Pet Cards  */
+
+.thirdSectionTitle{
+    color: var(--main-dark) !important;
+    font-family: var(--oswald) !important;
+    letter-spacing: -2px !important;
+    margin-bottom: 2rem !important;
+}
+
+.thirdSectionCard{
+    height: 400px !important;
+}
+
+@media only screen and (max-width: 500px) {
+    .heroPic1 {
+      background-position: 20% 100%;
+      margin: 0.5rem 0 !important;
+    }
+    .tagline {
+      font-size: 3.5rem !important;
+      line-height: 0.9 !important;
+    }
+    .subTagline {
+      font-size: 1.5rem !important;
+      line-height: 0.8 !important;
+    }
+    .secondSectionATextTitle{
+        font-size: 4rem !important;
+    }
+
+  }
+
+

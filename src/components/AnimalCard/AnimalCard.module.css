@@ -10,5 +10,5 @@
 }
 
 h2{
-    color: #404651 !important;
+    color: var(--main-dark) !important;
 }

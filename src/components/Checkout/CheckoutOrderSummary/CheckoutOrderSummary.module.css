@@ -1,0 +1,10 @@
+.summarySection{
+    color: var(--main-dark);
+    min-height: 80vh !important;
+    padding: 1rem .5rem !important;
+}
+
+.subtotalText{
+    min-height: 30vh !important;
+
+}

@@ -1,12 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?&family=Oswaldfamily=Amatic+SC&family=Open+Sans&family=Roboto&display=swap');
 
   .root {
       flex-grow: 1;
   }
 
   .navLinks {
-      margin-right: 1rem !important; 
-  }
+      margin-right: 1rem !important;
+      
+}
+  .navLinks:hover{
+    color: var(--main-brown);
+    text-decoration: none !important;
+    transition: 300ms !important    ;
+    -webkit-transition: 300ms !important    ;
+    -moz-transition: 300ms !important    ;
+    -ms-transition: 300ms !important    ;
+    -o-transition: 300ms !important    ;
+}
 
   .shoppingCart {
       margin-right: .5rem
@@ -19,7 +29,8 @@
   }
   .logo{
       margin-right: 3rem !important;
-      font-family: Amatic SC !important;
+      
+      letter-spacing: -2px !important;
       cursor: pointer !important;
   }
 
@@ -27,14 +38,20 @@
 
   @media only screen and (max-width: 770px) {
     .logo {
-      margin-right: 0 !important;
-      font-size: 3rem !important;
-    }
-  }
-
-  @media only screen and (max-width: 400px) {
-    .logo {
-      margin-right: 0 !important;
+      margin-right: 2rem !important;
       font-size: 2.5rem !important;
     }
   }
+
+  @media only screen and (max-width: 500px) {
+    .logo {
+      margin-right: 0 !important;
+      font-size: 1.5rem !important;
+    }
+  }
+
+  .checkoutButton{
+    background-color: var(--main-brown) !important;
+  }
+
+  

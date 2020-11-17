@@ -7,6 +7,8 @@ import {
   FormControl,
   Select,
   Grid,
+  useTheme,
+  useMediaQuery
 } from "@material-ui/core";
 
 import AnimalCard from "../AnimalCard/AnimalCard";
@@ -17,10 +19,20 @@ export default function AnimalMain({ catBreeds, dogBreeds }) {
   const [selectedBreed, setBreeds] = useState("");
   const [selectedBreedID, setBreedsID] = useState("");
 
+  //logic for title alignment
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
+  const titleAlignment = isMobile ? "center" : "left"
+  const breedSelectorAlignment = isMobile ? "center" : "right"
+
+
+  //use params and history for navigation and select which API to call, breeds to use 
+
   let history = useHistory();
   const { animals } = useParams();
-  console.log(animals)
   const animalBreeds = (animals === "dogs" ? dogBreeds : catBreeds)
+  const animalUrl = (animals === "dogs" ? 'dogs' : 'cats')
 
   // breed picker sends user to specific page
 
@@ -41,12 +53,14 @@ export default function AnimalMain({ catBreeds, dogBreeds }) {
           alignItems="center"
           spacing={1}
         >
-          <Grid item >
-            <Typography variant="h1" align="center" className={styles.logo}>
+          <Grid item container direction="row">
+            <Grid item sm={6}  xs={12} >
+            <Typography variant="h1" align={titleAlignment} className={styles.logo}>
               {animals === "dogs" ? `Dogs` : `Cats` }
             </Typography>
-
-            <FormControl className={styles.formControl}>
+            </Grid>
+            <Grid item sm={6} xs={12} align={breedSelectorAlignment} >
+            <FormControl className={styles.formControl} color="secondary">
               <InputLabel id="breed-selector-label">Breeds</InputLabel>
               <Select
                 labelId="breed-selector-label"
@@ -63,6 +77,7 @@ export default function AnimalMain({ catBreeds, dogBreeds }) {
                   : null}
               </Select>
             </FormControl>
+            </Grid>
           </Grid>
           <Grid container item spacing={3}>
             {catBreeds && dogBreeds
@@ -72,6 +87,7 @@ export default function AnimalMain({ catBreeds, dogBreeds }) {
                       className={styles.card}
                       id={breed.id}
                       breed={breed}
+                      animalUrl={animalUrl}
                     />
                   </Grid>
                 ))
