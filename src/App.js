@@ -80,16 +80,16 @@ class App extends React.Component {
       <>
         <Header removeFromCart={this.removeFromCart} products={this.state.cartItems}/>
         <Switch>
-          <Route path="/contact">
+          <Route path="/contact/:section">
             <Contact  />
           </Route>
           <Route path="/checkout">
             <Checkout increaseItemCount={this.increaseItemCount} removeFromCart={this.removeFromCart} cartItems={this.state.cartItems} />
           </Route>
-          <Route path="/:animals/:id">
+          <Route path="/breeds/:animals/:id">
             <AnimalPage  dogBreeds={this.state.dogBreeds} catBreeds={this.state.catBreeds} addToCart={this.addToCart}/>
           </Route>
-          <Route path="/:animals">
+          <Route path="/breeds/:animals">
             <AnimalMain  dogBreeds={this.state.dogBreeds} catBreeds={this.state.catBreeds} />
           </Route>
           

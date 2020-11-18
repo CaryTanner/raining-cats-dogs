@@ -121,7 +121,7 @@ export default function PaymentForm({ setActiveStep, email, firstName }) {
       </Dialog>
       <Snackbar
         anchorOrigin={{
-          vertical: 'top',
+          vertical: 'bottom',
           horizontal: 'center',
         }}
         open={openSnackbar}

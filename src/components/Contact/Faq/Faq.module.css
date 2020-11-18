@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Oswald&family=Open+Sans&family=Roboto&display=swap");
+
+
+.sectionTitle{
+    color: var(--main-dark);
+    line-height: .9 !important;
+    letter-spacing: -1px !important;
+  
+  
+}
+
+.articleTitle{
+    font-family:  var(--oswald), Helvetica, sans-serif !important;
+    color: var(--main-dark);
+    line-height: .8 !important;
+    letter-spacing: -2px !important;
+    margin: 2rem 0 !important; 
+}
+
+
+.questions{
+    color: var(--main-dark);
+    
+}

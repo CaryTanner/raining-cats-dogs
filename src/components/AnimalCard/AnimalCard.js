@@ -36,7 +36,7 @@ export default function AnimalCard({ breed, animalUrl }) {
 
   // logic of card click to send to individual page
   function handleClickLink(event) {
-    history.push(`/${animalUrl}/${event.currentTarget.id}`);
+    history.push(`/breeds/${animalUrl}/${event.currentTarget.id}`);
   }
 
   return (

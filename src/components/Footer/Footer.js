@@ -26,18 +26,18 @@ export default function Footer() {
         </Grid>
         <Grid xs={12}  sm={6} md={3} item container direction="column">
         <h2 className={styles.title}>Shop</h2>
-        <a  href="/dogs" className={styles.links}> Dogs </a>
-        <a  href="/cats" className={styles.links}> Cats </a>
+        <a  href="/breeds/dogs" className={styles.links}> Dogs </a>
+        <a  href="/breeds/cats" className={styles.links}> Cats </a>
         
         
         </Grid>
         <Grid xs={12} sm={6} md={3} item container direction="column">
         <h2 className={styles.title}>Info</h2>
-        <a href="/contact" className={styles.links} >Contact </a>
-        <a href="" className={styles.links}>FAQ</a>
-        <a href="" className={styles.links}>Humane Breeding</a>
-        <a href="" className={styles.links}>Pet Ownership</a>
-        <a href="" className={styles.links}>Shipping &amp; Returns</a>
+        <a href="/contact/contact" className={styles.links} >Contact </a>
+        <a href="/contact/faq" className={styles.links}>FAQ</a>
+        <a href="/contact/humane_breeding" className={styles.links}>Humane Breeding</a>
+        <a href="/contact/pet_ownership" className={styles.links}>Pet Ownership</a>
+        <a href="/contact/shipping_returns" className={styles.links}>Shipping &amp; Returns</a>
         
         
 

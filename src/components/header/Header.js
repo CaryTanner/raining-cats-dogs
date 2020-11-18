@@ -72,34 +72,34 @@ const Header = ({ products, removeFromCart }) => {
                 <Link
                   href="/"
                   color="inherit"
-                  onClick={() => handleClickLink("/")}
+                  
                   className={styles.navLinks}
                   variant="h6"
                 >
                   Home
                 </Link>
                 <Link
-                  href="/dogs"
+                  href="/breeds/dogs"
                   color="inherit"
-                  onClick={() => handleClickLink("/dogs")}
+                  
                   className={styles.navLinks}
                   variant="h6"
                 >
                   Dogs
                 </Link>
                 <Link
-                  href="/cats"
+                  href="/breeds/cats"
                   color="inherit"
-                  onClick={() => handleClickLink("/cats")}
+                  
                   className={styles.navLinks}
                   variant="h6"
                 >
                   Cats
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/contact/contact"
                   color="inherit"
-                  onClick={() => handleClickLink("/contact")}
+                  
                   className={styles.navLinks}
                   variant="h6"
                 >
@@ -176,13 +176,13 @@ const Header = ({ products, removeFromCart }) => {
                 onClose={handleClose}
               >
                 <MenuItem onClick={() => handleClickLink("/")}>Home</MenuItem>
-                <MenuItem onClick={() => handleClickLink("/dogs")}>
+                <MenuItem onClick={() => handleClickLink("/breeds/dogs")}>
                   Dogs
                 </MenuItem>
-                <MenuItem onClick={() => handleClickLink("/cats")}>
+                <MenuItem onClick={() => handleClickLink("/breeds/cats")}>
                   Cats
                 </MenuItem>
-                <MenuItem onClick={() => handleClickLink("/contact")}>
+                <MenuItem onClick={() => handleClickLink("/contact/contact")}>
                   Contact
                 </MenuItem>
               </Menu>
