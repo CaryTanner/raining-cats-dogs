@@ -17,13 +17,16 @@
     "react-scripts": "4.0.0",
     "react-uuid": "^1.0.2",
     "web-vitals": "^0.2.4",
-    "yup": "^0.29.3"
+    "yup": "^0.29.3",
+    "zip-a-folder": "0.0.12"
   },
+  "homepage": "https://carylandontanner.se",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy_zip": "npm run build && node zip.js && git add build.zip && git commit -m 'Deployed via zip' && git push"
   },
   "eslintConfig": {
     "extends": [

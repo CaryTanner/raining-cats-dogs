@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Button,  TextField, Snackbar, IconButton,  useTheme, useMediaQuery } from '@material-ui/core';
+import {Button,  TextField, Snackbar, IconButton } from '@material-ui/core';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import CloseIcon from '@material-ui/icons/Close';
 import styles from './AddToCart.module.css'
@@ -12,10 +12,7 @@ export default function AddToCart({item, addToCart}){
     // open snackbar
     const [open, setOpen] = useState(false);
 
-//logic snackbar
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
-    const snackbarPosition = isMobile ? "top" : "bottom"
+
 
     const handleClick = () => {
         setOpen(true);
@@ -40,7 +37,7 @@ export default function AddToCart({item, addToCart}){
     
     <Snackbar
         anchorOrigin={{
-          vertical: snackbarPosition,
+          vertical: 'top',
           horizontal: 'center',
         }}
         open={open}
@@ -50,10 +47,10 @@ export default function AddToCart({item, addToCart}){
         
         action={
           <>
-            <Button variant="contained" color="secondary" size="small" onClick={()=> handleClickLink("/checkout")}>
+            <Button variant="contained" color="secondary" size="small" onClick={()=> handleClickLink("/checkout")} className={styles.checkoutButton}>
               Checkout
             </Button>
-            <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+            <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose} >
               <CloseIcon fontSize="small" />
             </IconButton>
           </>
