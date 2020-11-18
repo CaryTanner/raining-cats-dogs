@@ -43,7 +43,7 @@
 
 .firstSectionA {
   height: 440px;
-  background-image:  linear-gradient(180deg, rgba(255,179,84,1) 0%, rgba(253,249,243,0.31834740732230393) 100%), url("../../Images/pexels-gilberto-reyes-825947.jpg");
+  background-image:  linear-gradient(180deg, rgba(255,179,84,1) 0%, rgba(253,249,243,0.31834740732230393) 100%), url("../../Images/dog-of-the-month.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -121,7 +121,7 @@
 }
 .secondSectionA{
     height: 500px;
-    background-image: url("../../Images/pexels-pixabay-209037.jpg");
+    background-image: url("../../Images/shy-cat.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
