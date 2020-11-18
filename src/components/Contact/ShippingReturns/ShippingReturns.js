@@ -142,7 +142,7 @@ export default function ShippingReturns(){
               id="panel1a-header"
             >
               <Typography className={styles.questions}>
-                Can I pick up my own animal?
+                Picking Up a Pet Directly 
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
