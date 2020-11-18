@@ -44,13 +44,13 @@ export default function AddToCart({item, addToCart}){
           horizontal: 'center',
         }}
         open={open}
-        autoHideDuration={6000}
+        autoHideDuration={7000}
         onClose={handleClose}
         message={`Success! ${item ? item.name : null} added to cart.`}
         
         action={
           <>
-            <Button color="secondary" size="small" onClick={()=> handleClickLink("/checkout")}>
+            <Button variant="contained" color="secondary" size="small" onClick={()=> handleClickLink("/checkout")}>
               Checkout
             </Button>
             <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>

@@ -98,7 +98,7 @@ const CheckoutItems = ({ cartItems, removeFromCart, increaseItemCount, setActive
           </Grid>
           <Grid item container justify="center">
             <Button
-              href="/cats"
+              href="/breeds/cats"
               variant="contained"
               color="secondary"
               className={styles.emptyCartButton}
@@ -107,7 +107,7 @@ const CheckoutItems = ({ cartItems, removeFromCart, increaseItemCount, setActive
               Find Cats
             </Button>
             <Button
-              href="/dogs"
+              href="/breeds/dogs"
               variant="contained"
               color="secondary"
               className={styles.emptyCartButton}

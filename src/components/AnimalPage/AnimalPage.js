@@ -47,7 +47,7 @@ export default function AnimalPage({ dogBreeds, catBreeds, addToCart }) {
   const handleChange = (event) => {
     setBreeds(event.target.value);
     setBreedsID(event.currentTarget.id);
-    history.push(`/${animals}/${event.currentTarget.id}`);
+    history.push(`/breeds/${animals}/${event.currentTarget.id}`);
   };
 
   // get id & animals from params
@@ -72,7 +72,7 @@ export default function AnimalPage({ dogBreeds, catBreeds, addToCart }) {
   const cartObj = {
     id: id,
     name: animalPics ? animalPics[0].breeds[0].name : null,
-    link: `/${animals}/${id}`,
+    link: `/breeds/${animals}/${id}`,
     pic: animalPics ? animalPics[0].url : null,
     price: price,
   };

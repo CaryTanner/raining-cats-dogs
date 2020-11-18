@@ -39,7 +39,7 @@ export default function AnimalMain({ catBreeds, dogBreeds }) {
   const handleChange = (event) => {
     setBreeds(event.target.value);
     setBreedsID(event.currentTarget.id);
-    history.push(`/${animals}/${event.currentTarget.id}`);
+    history.push(`/breeds/${animals}/${event.currentTarget.id}`);
   };
 
   

@@ -141,7 +141,14 @@ export default function ContactForm() {
         onClose={handleClose}
         
         message={`Thanks, ${formData.name} We'll contact you at ${formData.email} ASAP!`}
-        
+        action={
+          <>
+            <Button variant="contained" color="secondary" size="small" onClick={()=> handleClose()}>
+              Close
+            </Button>
+            
+          </>
+        }
         />
     </>
   );

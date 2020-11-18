@@ -121,7 +121,7 @@ export default function PaymentForm({ setActiveStep, email, firstName }) {
       </Dialog>
       <Snackbar
         anchorOrigin={{
-          vertical: 'bottom',
+          vertical: 'top',
           horizontal: 'center',
         }}
         open={openSnackbar}
@@ -129,6 +129,14 @@ export default function PaymentForm({ setActiveStep, email, firstName }) {
         onClose={handleCloseSnackbar}
         
         message={`Thanks, ${firstName}. We'll contact you ASAP!`}
+        action={
+          <>
+            <Button variant="contained" color="secondary" size="small" onClick={()=> handleCloseSnackbar()}>
+              Close
+            </Button>
+            
+          </>
+        }
         
         />
       

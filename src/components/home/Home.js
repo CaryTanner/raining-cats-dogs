@@ -23,7 +23,7 @@ export default function Home({ catBreeds, dogBreeds }) {
           </Typography>
         
           <Button
-            href="/cats"
+            href="/breeds/cats"
             variant="contained"
             color="secondary"
             className={styles.button1}
@@ -32,7 +32,7 @@ export default function Home({ catBreeds, dogBreeds }) {
             Find Cats
           </Button>
           <Button
-            href="/dogs"
+            href="/breeds/dogs"
             variant="contained"
             color="secondary"
             className={styles.button2}
@@ -61,7 +61,7 @@ export default function Home({ catBreeds, dogBreeds }) {
             </Typography>
             
             <Button
-              href="/dogs/23"
+              href="/breeds/dogs/23"
               variant="contained"
               color="secondary"
               className={styles.firstSectionButton}
@@ -75,7 +75,7 @@ export default function Home({ catBreeds, dogBreeds }) {
             </Typography>
 
             <Button
-              href="/dogs"
+              href="/breeds/dogs"
               variant="contained"
               color="secondary"
               className={styles.firstSectionButton}
@@ -90,7 +90,7 @@ export default function Home({ catBreeds, dogBreeds }) {
             </Typography>
 
             <Button
-              href="/cats"
+              href="/breeds/cats"
               variant="contained"
               color="secondary"
               className={styles.firstSectionButton}
@@ -119,7 +119,7 @@ export default function Home({ catBreeds, dogBreeds }) {
             <Typography variant="h3" className={styles.secondSectionAText}>
               Plan the Perfect Pet
             </Typography>
-            <Button href="/contact" variant="contained" color="secondary">
+            <Button href="/contact/pet_ownership" variant="contained" color="secondary">
               Learn More
             </Button>
           </Grid>
