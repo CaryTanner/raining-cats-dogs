@@ -12,7 +12,7 @@ import {
   useTheme,
   useMediaQuery,
   Container,
-  Link
+  
 } from "@material-ui/core";
 import AddToCart from "./AddToCart/AddToCart";
 import { fetchCatImage } from "../../api";
@@ -65,7 +65,7 @@ export default function AnimalPage({ dogBreeds, catBreeds, addToCart }) {
     fetchAPI();
   }, [id]);
 
-  //logic for price
+  //logic for price (including 50% off dog of the month)
   let price = animalPics ? (id === '23' ? (animalPics[0].breeds[0].name.length * 10) / 2 : (animalPics[0].breeds[0].name.length * 10)) : null;
 
   //item to add to cart

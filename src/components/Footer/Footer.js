@@ -1,19 +1,23 @@
-import React from "react";
+import React,  { useState } from "react";
 import styles from "./Footer.module.css";
-import { Grid, Button, Typography, TextField } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
+import { Grid, Button, TextField, Snackbar } from "@material-ui/core";
+
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 
 export default function Footer() {
 
-    // router logic
-  let history = useHistory();
 
-  function handleClickLink(path) {
-    history.push(path);
+  // snackbar logic for newsletter
+ const [open, setOpen] = useState(false)
+ const handleClose = (event, reason) => {
+  if (reason === 'clickaway') {
+    return;
   }
+  setOpen(false)
+}
+ 
 
   return (
     <>
@@ -44,11 +48,12 @@ export default function Footer() {
         </Grid>
         <Grid xs={12}  sm={6} md={3} item container direction="column">
         <h2 className={styles.title}>Get Special Deals and Offers</h2>
-            
+          
         <TextField size="small" className={styles.input} id="footer-email" label="Email" variant="filled" color="secondary" />
-          <Button color="secondary" variant="contained">
+          <Button onClick={()=>{setOpen(true)}}type="submit" color="secondary" variant="contained">
             subscribe
           </Button>
+           
           <Grid item >
           <h2 className={styles.title}>Cute Kitties &amp; Doggos!  </h2>
           <Grid item container direction="row">
@@ -61,6 +66,25 @@ export default function Footer() {
           
         </Grid>
       </Grid>
+      <Snackbar
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'center',
+        }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        
+        message={`Thanks, for signing up!`}
+        action={
+          <>
+            <Button variant="contained" color="secondary" size="small" onClick={()=> handleClose()}>
+              Close
+            </Button>
+            
+          </>
+        }
+        />
     </>
   );
 }
