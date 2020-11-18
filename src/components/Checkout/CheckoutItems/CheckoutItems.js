@@ -86,7 +86,7 @@ const CheckoutItems = ({ cartItems, removeFromCart, increaseItemCount, setActive
         </List>
         <Grid container xs={12} justify="space-around">
         
-            <Button variant="contained" color="primary" onClick={()=> setActiveStep({type: 'increment'})}>Shipping<ArrowForwardIosIcon fontSize="small"/> </Button>
+            <Button variant="contained" color="secondary" onClick={()=> setActiveStep({type: 'increment'})}>Shipping<ArrowForwardIosIcon fontSize="small"/> </Button>
         </Grid>
         </>
       ) : (

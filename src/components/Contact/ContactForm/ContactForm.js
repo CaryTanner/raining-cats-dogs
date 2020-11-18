@@ -60,7 +60,7 @@ export default function ContactForm() {
 
         <Form className={styles.form}>
         <Typography variant="h5" align="left" className={styles.title}> 
-         Contact
+         Contact Form
          <hr/>
           </Typography> 
           <Grid container direction="column" spacing={3} justify="center" >

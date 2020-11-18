@@ -110,10 +110,10 @@ export default function PaymentForm({ setActiveStep, email, firstName }) {
           />
         </DialogContent>
         <DialogActions>
-        <Button onClick={handleClose} color="primary">
+        <Button onClick={handleClose} color="secondary">
             cancel
           </Button>
-          <Button onClick={handleOpenSnackbar} color="primary">
+          <Button onClick={handleOpenSnackbar} color="secondary">
             confirm
           </Button>
           

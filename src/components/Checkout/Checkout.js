@@ -89,7 +89,8 @@ export default function Checkout({
           </Grid>
           <Grid
             item
-            md={7}
+            md={6}
+            sm={7}
             xs={12}
             
             container
@@ -119,7 +120,7 @@ export default function Checkout({
             )}
             </Paper>
           </Grid>
-          <Grid item md={4} xs={12}>
+          <Grid item  md={3} sm={4} xs={12}>
               <Paper className={styles.paperSection}>
             <CheckoutOrderSummary cartItems={cartItems} formData={formData} />
             </Paper>

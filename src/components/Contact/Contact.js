@@ -17,10 +17,11 @@ export default function Contact(){
          <Grid item xs={12} sm={4} md={3} container direction="column" className={styles.infoSection}> 
          
          <Typography variant="h5" align="left" className={styles.information}> 
-         Information
+         Contact
          <hr/>
           </Typography>
           
+          <a href="" className={styles.links}>Contact Form</a>
           <a href="" className={styles.links}>FAQ</a>
           <a href="" className={styles.links}>Humane Breeding</a>
           <a href="" className={styles.links}>Pet Ownership</a>

@@ -46,10 +46,12 @@ export default function Home({ catBreeds, dogBreeds }) {
           md={12}
           xs={12}
           container
+          
           className={styles.firstSection}
           justify="space-evenly"
+          
         >
-          <Grid item md={3} xs={12} className={styles.firstSectionA} container direction="column" justify="space-between">
+          <Grid item md={2} sm={3} xs={12} className={styles.firstSectionA} container direction="column" justify="space-between">
             <Typography variant="h3" className={styles.firstSectionAText}>
               DOG OF <br />
               THE <br /> MONTH
@@ -67,7 +69,7 @@ export default function Home({ catBreeds, dogBreeds }) {
               shop Now
             </Button>
           </Grid>
-          <Grid item md={3} xs={12} className={styles.firstSectionB} container direction="column" justify="space-between">
+          <Grid item sm={4} xs={12} className={styles.firstSectionB} container direction="column" justify="space-between">
             <Typography variant="h3" className={styles.firstSectionBText}>
               PROUD <br /> PUPPIES
             </Typography>
@@ -82,7 +84,7 @@ export default function Home({ catBreeds, dogBreeds }) {
             </Button>
           </Grid>
 
-          <Grid item md={3} xs={12} className={styles.firstSectionC} container direction="column" justify="space-between">
+          <Grid item sm={4} xs={12} className={styles.firstSectionC} container direction="column" justify="space-between">
             <Typography variant="h3" className={styles.firstSectionCText}>
               CUTE <br /> KITTENS
             </Typography>
@@ -138,7 +140,7 @@ export default function Home({ catBreeds, dogBreeds }) {
             </Typography>
           </Grid>
           {catBreeds && dogBreeds ? (
-            <Grid item md={3} xs={12}  align="center" className={styles.thirdSectionCard}>
+            <Grid item md={4}  sm={3} xs={12}  align="center" className={styles.thirdSectionCard}>
               <AnimalCard
                 className={styles.card}
                 id={dogBreeds[138].id}
@@ -148,7 +150,7 @@ export default function Home({ catBreeds, dogBreeds }) {
             </Grid>
           ) : null}
           {catBreeds && dogBreeds ? (
-            <Grid item md={3} xs={12} align="center" className={styles.thirdSectionCard}>
+            <Grid item md={4} sm={3} xs={12} align="center" className={styles.thirdSectionCard}>
               <AnimalCard
                 className={styles.card}
                 id={catBreeds[21].id}
@@ -158,7 +160,7 @@ export default function Home({ catBreeds, dogBreeds }) {
             </Grid>
           ) : null}
           {catBreeds && dogBreeds ? (
-            <Grid item md={3} xs={12}  align="center" className={styles.thirdSectionCard}>
+            <Grid item md={4} sm={3} xs={12}  align="center" className={styles.thirdSectionCard}>
               <AnimalCard
                 className={styles.card}
                 id={dogBreeds[62].id}

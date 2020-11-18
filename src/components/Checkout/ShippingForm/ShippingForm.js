@@ -77,7 +77,7 @@ export default function ShippingForm({
                 name="firstName"
                 type="text"
                 label="First Name"
-                clas
+                variant="outlined"
                 //inline-styles && extra div's used as formik components don't seem to respond to className based css  
                 style={{width: '100%'}}
                 
@@ -90,7 +90,7 @@ export default function ShippingForm({
                 name="lastName"
                 type="text"
                 label="Last Name"
-                
+                variant="outlined"
                 style={{width: '100%'}}
               />
             </Grid>
@@ -101,7 +101,7 @@ export default function ShippingForm({
                 name="email"
                 type="email"
                 label="Email"
-                
+                variant="outlined"
                 style={{width: '100%'}}
               />
             </Grid>
@@ -111,7 +111,7 @@ export default function ShippingForm({
                 name="address"
                 type="text"
                 label="Address"
-                
+                variant="outlined"
                 style={{width: '100%'}}
               />
             </Grid>
@@ -121,7 +121,7 @@ export default function ShippingForm({
                 name="city"
                 type="text"
                 label="City"
-                
+                variant="outlined"
                 style={{width: '100%'}}
               />
             </Grid>
@@ -160,7 +160,7 @@ export default function ShippingForm({
             <Grid item container xs={12} justify="space-around">
               <Button
                 variant="contained"
-                color="primary"
+                color="secondary"
                 onClick={() => setActiveStep({ type: "decrement" })}
               >
                 {" "}
@@ -169,7 +169,7 @@ export default function ShippingForm({
               </Button>
               <Button
                 variant="contained"
-                color="primary"
+                color="secondary"
                 onClick={() => handleSubmit()}
                 type="submit"
                 
