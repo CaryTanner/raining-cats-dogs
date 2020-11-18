@@ -66,7 +66,7 @@ export default function AnimalPage({ dogBreeds, catBreeds, addToCart }) {
   }, [id]);
 
   //logic for price
-  let price = animalPics ? animalPics[0].breeds[0].name.length * 10 : null;
+  let price = animalPics ? (id === '23' ? (animalPics[0].breeds[0].name.length * 10) / 2 : (animalPics[0].breeds[0].name.length * 10)) : null;
 
   //item to add to cart
   const cartObj = {
