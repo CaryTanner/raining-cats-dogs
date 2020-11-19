@@ -19,6 +19,7 @@ import FilterDramaIcon from '@material-ui/icons/FilterDrama';
 import { useHistory, useLocation } from "react-router-dom";
 import CartItems from "../CartItems/CartItems";
 
+
 import styles from "./Header.module.css";
 
 const Header = ({ products, removeFromCart }) => {
