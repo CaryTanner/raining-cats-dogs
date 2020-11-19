@@ -59,33 +59,33 @@ const Header = ({ products, removeFromCart }) => {
     history.push(path);  
   }
 
-  // logic to highlight current section of site
+  // logic to highlight current section of site && 
 
-  let location = useLocation()
+  // let location = useLocation()
   
-  let dogsRegex = /^\/breeds\/dogs/g.test(location.pathname) ? "secondary" : "inherit"
-  let catsRegex = /^\/breeds\/cats/g.test(location.pathname) ? "secondary" : "inherit"
-  let contactRegex = /^\/contact/g.test(location.pathname) ? "secondary" : "inherit"
-  let homeRegex = /^\/$/g.test(location.pathname) ? "secondary" : "inherit"
+  // let dogsRegex = /^\/breeds\/dogs/g.test(location.pathname) ? "secondary" : "inherit"
+  // let catsRegex = /^\/breeds\/cats/g.test(location.pathname) ? "secondary" : "inherit"
+  // let contactRegex = /^\/contact/g.test(location.pathname) ? "secondary" : "inherit"
+  // let homeRegex = /^\/$/g.test(location.pathname) ? "secondary" : "inherit"
   
-  
+  // console.log( 'path name  ' + location.pathname)
 
 
 
   return (
     <div className={styles.root}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar >
           <div className={styles.title}>
             <Typography onClick={() => handleClickLink("/")} variant="h4" className={styles.logo}>
-              <FilterDramaIcon color="secondary" fontSize={cloudLogoSize} />&nbsp;Raining&nbsp;Cats&nbsp;&amp;&nbsp;Dogs
+              <FilterDramaIcon className={styles.cloudIcon} color="secondary" fontSize={cloudLogoSize} />&nbsp;Raining&nbsp;Cats&nbsp;&amp;&nbsp;Dogs
             </Typography>
             {isMobile ? null : (
               <>
               <Typography >
                 <Link
                   href="/"
-                  color={homeRegex}
+                  color="inherit"
                   
                   className={styles.navLinks}
                   variant="h6"
@@ -94,16 +94,17 @@ const Header = ({ products, removeFromCart }) => {
                 </Link>
                 <Link
                   href="/breeds/dogs"
-                  color={dogsRegex}
+                  color="inherit"
                   
                   className={styles.navLinks}
                   variant="h6"
+                 
                 >
                   Dogs
                 </Link>
                 <Link
                   href="/breeds/cats"
-                  color={catsRegex}
+                  color="inherit"
                   
                   className={styles.navLinks}
                   variant="h6"
@@ -112,7 +113,7 @@ const Header = ({ products, removeFromCart }) => {
                 </Link>
                 <Link
                   href="/contact/contact"
-                  color={contactRegex}
+                  color="inherit"
                   
                   className={styles.navLinks}
                   variant="h6"
