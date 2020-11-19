@@ -8,15 +8,14 @@ import PaymentForm from "./PaymentForm/PaymentForm";
 import {
   Typography,
   Grid,
-  Button,
+  
   Stepper,
   StepLabel,
   Step,
   useTheme,
   useMediaQuery,
   Paper,
-  Backdrop,
-  CircularProgress
+  
 } from "@material-ui/core";
 
 export default function Checkout({

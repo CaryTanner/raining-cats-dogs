@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Typography,
   Container,
@@ -31,6 +31,7 @@ export default function AnimalMain({ catBreeds, dogBreeds }) {
 
   let history = useHistory();
   const { animals } = useParams();
+ 
   const animalBreeds = (animals === "dogs" ? dogBreeds : catBreeds)
   const animalUrl = (animals === "dogs" ? 'dogs' : 'cats')
 
@@ -41,6 +42,8 @@ export default function AnimalMain({ catBreeds, dogBreeds }) {
     setBreedsID(event.currentTarget.id);
     history.push(`/breeds/${animals}/${event.currentTarget.id}`);
   };
+
+  
 
   
   return (

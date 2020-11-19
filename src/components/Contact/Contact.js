@@ -2,24 +2,26 @@ import React from 'react'
 import styles from './Contact.module.css'
 import ContactForm from './ContactForm/ContactForm'
 import {Grid, Paper, Typography, Container, useTheme, useMediaQuery } from '@material-ui/core'
-import { useHistory, useParams } from "react-router-dom"
+import {  useParams } from "react-router-dom"
 import Faq from './Faq/Faq';
 import HumaneBreeding from './HumaneBreeding/HumaneBreeding';
 import PetOwnership from './PetOwnership/PetOwnership'
 import ShippingReturns from './ShippingReturns/ShippingReturns';
 
 
-export default function Contact(){
+export default function Contact( ){
  
  
   //logic which section to display
-  let history = useHistory();
+  
   const { section } = useParams();
   
   //change position of article and links on mobile
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const pageReverse = isMobile ? "column-reverse" : "row"
+
+  
 
     return(<>
         <Container>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Grid, Typography, Button } from "@material-ui/core";
 import styles from "./Home.module.css";
-import { useHistory } from "react-router-dom";
-
+import { useHistory, useEffect } from "react-router-dom";
+import { useParams } from 'react-router-dom'
 import AnimalCard from "../AnimalCard/AnimalCard";
 
 export default function Home({ catBreeds, dogBreeds }) {
@@ -13,6 +13,10 @@ export default function Home({ catBreeds, dogBreeds }) {
   function handleClickLink(path) {
     history.push(path);
   }
+
+  // params for nav highlight
+  
+
 
   return (
     <>

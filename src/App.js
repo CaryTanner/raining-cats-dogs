@@ -23,11 +23,13 @@ class App extends React.Component {
       dogBreeds: "",
       cartItems: [],
       
+      
     }
     
     this.addToCart = this.addToCart.bind(this);
     this.removeFromCart = this.removeFromCart.bind(this);
-    this.increaseItemCount = this.increaseItemCount.bind(this);  
+    this.increaseItemCount = this.increaseItemCount.bind(this); 
+    
     
   };
 
@@ -72,13 +74,16 @@ class App extends React.Component {
       }))
       
     }
+ 
     
 
   render() {
-    
+   
     return (
       <>
+      
         <Header removeFromCart={this.removeFromCart} products={this.state.cartItems}/>
+        
         <Switch>
           <Route path="/contact/:section">
             <Contact  />
@@ -87,15 +92,15 @@ class App extends React.Component {
             <Checkout increaseItemCount={this.increaseItemCount} removeFromCart={this.removeFromCart} cartItems={this.state.cartItems} />
           </Route>
           <Route path="/breeds/:animals/:id">
-            <AnimalPage  dogBreeds={this.state.dogBreeds} catBreeds={this.state.catBreeds} addToCart={this.addToCart}/>
+            <AnimalPage   dogBreeds={this.state.dogBreeds} catBreeds={this.state.catBreeds} addToCart={this.addToCart}/>
           </Route>
           <Route path="/breeds/:animals">
-            <AnimalMain  dogBreeds={this.state.dogBreeds} catBreeds={this.state.catBreeds} />
+            <AnimalMain   dogBreeds={this.state.dogBreeds} catBreeds={this.state.catBreeds} />
           </Route>
           
           
           <Route path="/">
-            <Home  dogBreeds={this.state.dogBreeds} catBreeds={this.state.catBreeds} />
+            <Home  getParams={this.getParams} dogBreeds={this.state.dogBreeds} catBreeds={this.state.catBreeds} />
           </Route>
         </Switch>
         <Footer />

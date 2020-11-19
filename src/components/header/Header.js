@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect} from "react";
 import {
   useTheme,
   AppBar,
@@ -16,7 +16,7 @@ import {
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import MenuIcon from '@material-ui/icons/Menu';
 import FilterDramaIcon from '@material-ui/icons/FilterDrama';
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import CartItems from "../CartItems/CartItems";
 
 import styles from "./Header.module.css";
@@ -59,6 +59,19 @@ const Header = ({ products, removeFromCart }) => {
     history.push(path);  
   }
 
+  // logic to highlight current section of site
+
+  let location = useLocation()
+  
+  let dogsRegex = /^\/breeds\/dogs/g.test(location.pathname) ? "secondary" : "inherit"
+  let catsRegex = /^\/breeds\/cats/g.test(location.pathname) ? "secondary" : "inherit"
+  let contactRegex = /^\/contact/g.test(location.pathname) ? "secondary" : "inherit"
+  let homeRegex = /^\/$/g.test(location.pathname) ? "secondary" : "inherit"
+  
+  
+
+
+
   return (
     <div className={styles.root}>
       <AppBar position="static">
@@ -68,10 +81,11 @@ const Header = ({ products, removeFromCart }) => {
               <FilterDramaIcon color="secondary" fontSize={cloudLogoSize} />&nbsp;Raining&nbsp;Cats&nbsp;&amp;&nbsp;Dogs
             </Typography>
             {isMobile ? null : (
-              <Typography>
+              <>
+              <Typography >
                 <Link
                   href="/"
-                  color="inherit"
+                  color={homeRegex}
                   
                   className={styles.navLinks}
                   variant="h6"
@@ -80,7 +94,7 @@ const Header = ({ products, removeFromCart }) => {
                 </Link>
                 <Link
                   href="/breeds/dogs"
-                  color="inherit"
+                  color={dogsRegex}
                   
                   className={styles.navLinks}
                   variant="h6"
@@ -89,7 +103,7 @@ const Header = ({ products, removeFromCart }) => {
                 </Link>
                 <Link
                   href="/breeds/cats"
-                  color="inherit"
+                  color={catsRegex}
                   
                   className={styles.navLinks}
                   variant="h6"
@@ -98,7 +112,7 @@ const Header = ({ products, removeFromCart }) => {
                 </Link>
                 <Link
                   href="/contact/contact"
-                  color="inherit"
+                  color={contactRegex}
                   
                   className={styles.navLinks}
                   variant="h6"
@@ -106,6 +120,10 @@ const Header = ({ products, removeFromCart }) => {
                   Contact
                 </Link>
               </Typography>
+              <Typography variant="h6" className={styles.checkoutLink} style={{color: '#ffb354', visibility: 'hidden' }} >
+                  Checkout
+              </Typography>
+              </>
             )}
           </div>
 
