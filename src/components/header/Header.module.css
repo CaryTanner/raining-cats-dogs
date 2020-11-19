@@ -21,6 +21,9 @@
   .shoppingCart {
       margin-right: .5rem
   }
+  .cartMenu{
+    min-width: 200px !important;
+  }
 
   .title{
       flex-grow: 1;

@@ -52,6 +52,8 @@ const Header = ({ products, removeFromCart }) => {
     setAnchorElCart(null);
   };
 
+  const disabledCheckoutBtn = products.length > 0 ? false : true
+
   // router logic
   let history = useHistory();
   
@@ -153,14 +155,15 @@ const Header = ({ products, removeFromCart }) => {
             }}
             open={openCart}
             onClose={handleCloseCart}
+            
           >
             <MenuItem >
-              {products.length > 0 ? <CartItems products={products} removeFromCart={removeFromCart} /> : <Typography variant="body1">Cart is empty</Typography> }
+              {products.length > 0 ? <CartItems products={products} removeFromCart={removeFromCart} /> : <Typography variant="body1" justify="center" >Cart is empty</Typography> }
             </MenuItem>
             <MenuItem >
-            <Grid container justify="space-evenly">
+            <Grid container justify="space-evenly" className={styles.cartMenu}>
               <Grid item>
-              {products.length > 0 ? <Button onClick={() => handleClickLink("/checkout")} variant="contained" className={styles.checkoutButton}>Checkout</Button> : null}
+              <Button disabled={disabledCheckoutBtn} onClick={() => handleClickLink("/checkout")} variant="contained" className={styles.checkoutButton}>Checkout</Button> 
               </Grid>
               <Grid item>
               <Button onClick={handleCloseCart}variant="outlined" color="secondary">Close</Button>
