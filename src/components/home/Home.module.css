@@ -5,7 +5,7 @@
 /* ** Hero pic ** */
 .heroPic {
   height: 100vh;
-  background: url("../../Images/dog-eyes.jpg");
+  background: url("../../Images/dog-eyes-small.jpg");
   background-repeat: no-repeat;
   background-position-y: 80%;
   background-size: cover;
@@ -43,7 +43,7 @@
 
 .firstSectionA {
   height: 440px;
-  background-image:  linear-gradient(180deg, rgba(255,179,84,1) 0%, rgba(253,249,243,0.31834740732230393) 100%), url("../../Images/dog-of-the-month.jpg");
+  background-image:  linear-gradient(180deg, rgba(255,179,84,1) 0%, rgba(253,249,243,0.31834740732230393) 100%), url("../../Images/dog-of-month-small.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -65,7 +65,7 @@
 
 .firstSectionB{
     height: 440px;
-    background-image: url("../../Images/wink-puppy.jpg");
+    background-image: url("../../Images/wink-dog-small.jpg");
     background-repeat: no-repeat;
   background-position-y: 30%;
   background-size: cover;
@@ -88,7 +88,7 @@
 
 .firstSectionC{
     height: 440px;
-    background-image: url("../../Images/chill-kitten.jpg");
+    background-image: url("../../Images/chill-cat-small.jpg");
     background-repeat: no-repeat;
   background-position: right;
   background-size: cover;
@@ -121,7 +121,7 @@
 }
 .secondSectionA{
     height: 500px;
-    background-image: url("../../Images/shy-cat.jpg");
+    background-image: url("../../Images/shy-cat-small.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

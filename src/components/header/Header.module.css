@@ -34,9 +34,7 @@
       cursor: pointer !important;
   }
 
- .cloudIcon{
-   vertical-align: middle;
- }
+
 
   @media only screen and (max-width: 770px) {
     .logo {

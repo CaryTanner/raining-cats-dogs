@@ -78,7 +78,7 @@ const Header = ({ products, removeFromCart }) => {
         <Toolbar >
           <div className={styles.title}>
             <Typography onClick={() => handleClickLink("/")} variant="h4" className={styles.logo}>
-              <FilterDramaIcon className={styles.cloudIcon} color="secondary" fontSize={cloudLogoSize} />&nbsp;Raining&nbsp;Cats&nbsp;&amp;&nbsp;Dogs
+              <FilterDramaIcon  color="secondary" fontSize={cloudLogoSize} />&nbsp;Raining&nbsp;Cats&nbsp;&amp;&nbsp;Dogs
             </Typography>
             {isMobile ? null : (
               <>
