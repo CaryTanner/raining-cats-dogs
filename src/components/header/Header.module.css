@@ -21,10 +21,14 @@
   .shoppingCart {
       margin-right: .5rem
   }
-  .cartMenu{
+  .cartMenuBtn{
     min-width: 200px !important;
-  }
 
+  }
+  .cartEmptyText{
+    margin-left: 2.25rem !important;
+  }
+  
   .title{
       flex-grow: 1;
       display: flex;

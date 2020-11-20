@@ -6,6 +6,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import { themeColors } from './themes/themeColors';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 const history = createBrowserHistory();
 
@@ -13,6 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router history={history}>
     <ThemeProvider theme={themeColors}>
+    <ScrollToTop />
     <App />
     </ThemeProvider>
     </Router>

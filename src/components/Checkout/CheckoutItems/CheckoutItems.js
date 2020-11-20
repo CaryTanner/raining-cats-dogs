@@ -24,6 +24,12 @@ const CheckoutItems = ({ cartItems, removeFromCart, increaseItemCount, setActive
 
   function handleClickLink(path) {
     history.push(path);
+    
+  }
+
+  function handleStep(direction){
+    setActiveStep(direction)
+    window.scrollTo(0, 0);
   }
 
   return (
@@ -86,13 +92,13 @@ const CheckoutItems = ({ cartItems, removeFromCart, increaseItemCount, setActive
         </List>
         <Grid container xs={12} justify="space-around">
         
-            <Button variant="contained" color="secondary" onClick={()=> setActiveStep({type: 'increment'})}>Shipping<ArrowForwardIosIcon fontSize="small"/> </Button>
+            <Button variant="contained" color="secondary" onClick={()=> handleStep({type: 'increment'})}>Shipping<ArrowForwardIosIcon fontSize="small"/> </Button>
         </Grid>
         </>
       ) : (
         <Grid container alignContent="center" className={styles.emptyCart}>
           <Grid item xs={12}>
-            <Typography variant="h3" align="center">
+            <Typography variant="h3" align="center" className={styles.emptyCartTitle}>
               Cart is Empty
             </Typography>
           </Grid>

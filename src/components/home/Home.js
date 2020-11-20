@@ -23,7 +23,7 @@ export default function Home({ catBreeds, dogBreeds }) {
       <Grid container>
         <Grid item md={12} xs={12} className={styles.heroPic}>
         <Typography variant="h2" className={styles.tagline}>
-            PUREBRED <br/> CATS&nbsp;&amp;&nbsp;DOGS
+            BUY PUREBRED <br/> CATS&nbsp;&amp;&nbsp;DOGS
           </Typography>
         
           <Button
@@ -33,7 +33,7 @@ export default function Home({ catBreeds, dogBreeds }) {
             className={styles.button1}
             size="large"
           >
-            Find Cats
+            Buy Cats
           </Button>
           <Button
             href="/breeds/dogs"
@@ -42,7 +42,7 @@ export default function Home({ catBreeds, dogBreeds }) {
             className={styles.button2}
             size="large"
           >
-            Find Dogs
+            Buy Dogs
           </Button>
         </Grid>
         <Grid

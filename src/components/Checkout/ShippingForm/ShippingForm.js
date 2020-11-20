@@ -5,6 +5,8 @@ import {
   FormLabel,
   FormControlLabel,
   Radio,
+  useTheme, 
+  useMediaQuery
   
 } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
@@ -12,6 +14,7 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { TextField, RadioGroup } from "formik-material-ui";
 import styles from "./ShippingForm.module.css";
+
 
 import * as Yup from "yup";
 
@@ -33,12 +36,21 @@ export default function ShippingForm({
       const { firstName, lastName, email, address, city, shipping } = values;
       setActiveStep({ type: "increment" });
       setFormData({ firstName, lastName, email, address, city, shipping });
-      
+      window.scrollTo(0, 0);
       return;
     }
   };
 
-  
+  // change spacing of form grid items om mobile
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
+  const formSpacing = (isMobile ? 0 : 1);
+
+  //control checkout flow and return window to top
+  function handleStep(direction){
+    setActiveStep(direction)
+    window.scrollTo(0, 0);
+  }
   
 
   return (
@@ -69,9 +81,9 @@ export default function ShippingForm({
       >
         <Form>
             
-          <Grid container xs={12}  spacing={3}>
+          <Grid container xs={12}  spacing={formSpacing}>
             
-              <Grid item md={6} xs={12}> 
+              <Grid item md={6} xs={12} className={styles.formItem}> 
               <Field
                 component={TextField}
                 name="firstName"
@@ -84,7 +96,7 @@ export default function ShippingForm({
               />
               </Grid> 
            
-              <Grid item md={6} xs={12}> 
+              <Grid item md={6} xs={12} className={styles.formItem}> 
               <Field
                 component={TextField}
                 name="lastName"
@@ -95,7 +107,7 @@ export default function ShippingForm({
               />
             </Grid>
 
-            <Grid item md={6} xs={12} >
+            <Grid item md={6} xs={12} className={styles.formItem}>
               <Field
                 component={TextField}
                 name="email"
@@ -105,7 +117,7 @@ export default function ShippingForm({
                 style={{width: '100%'}}
               />
             </Grid>
-            <Grid item md={6} xs={12}>
+            <Grid item md={6} xs={12}className={styles.formItem}>
               <Field
                 component={TextField}
                 name="address"
@@ -115,7 +127,7 @@ export default function ShippingForm({
                 style={{width: '100%'}}
               />
             </Grid>
-            <Grid item md={6} xs={12}>
+            <Grid item md={6} xs={12} className={styles.formItem}>
               <Field
                 component={TextField}
                 name="city"
@@ -125,7 +137,7 @@ export default function ShippingForm({
                 style={{width: '100%'}}
               />
             </Grid>
-            <Grid item md={6} xs={12} >
+            <Grid item md={6} xs={12} className={styles.formItem} >
                 
                 <FormLabel component="body1" >Shipping Options</FormLabel>
               
@@ -157,11 +169,11 @@ export default function ShippingForm({
               </Field>
               
             </Grid>
-            <Grid item container xs={12} justify="space-around">
+            <Grid item container xs={12} justify="space-evenly" className={styles.formItem}>
               <Button
                 variant="contained"
                 color="secondary"
-                onClick={() => setActiveStep({ type: "decrement" })}
+                onClick={() => handleStep({ type: "decrement" })}
               >
                 {" "}
                 <ArrowBackIosIcon fontSize="small" />

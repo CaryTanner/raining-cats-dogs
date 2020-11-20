@@ -15,7 +15,9 @@ image {
     height: 200px;
 }
 
-
+.emptyCartTitle{
+    margin-bottom: 3rem !important;
+}
 
 @media only screen and (max-width: 500px) {
     .animalName {
@@ -24,7 +26,7 @@ image {
   }
 
   .emptyCartButton{
-    margin: 2rem .5rem !important;
+    margin: .5rem !important;
 }
 
 .emptyCart{

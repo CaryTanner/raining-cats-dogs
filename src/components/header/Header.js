@@ -157,11 +157,13 @@ const Header = ({ products, removeFromCart }) => {
             onClose={handleCloseCart}
             
           >
-            <MenuItem >
-              {products.length > 0 ? <CartItems products={products} removeFromCart={removeFromCart} /> : <Typography variant="body1" justify="center" >Cart is empty</Typography> }
+            <MenuItem   >
+              
+              {products.length > 0 ? <CartItems products={products} removeFromCart={removeFromCart} /> : <Typography variant="h6" align="center" color="primary" className={styles.cartEmptyText} >Cart is empty</Typography> }
+              
             </MenuItem>
             <MenuItem >
-            <Grid container justify="space-evenly" className={styles.cartMenu}>
+            <Grid container justify="space-evenly" className={styles.cartMenuBtn}>
               <Grid item>
               <Button disabled={disabledCheckoutBtn} onClick={() => handleClickLink("/checkout")} variant="contained" className={styles.checkoutButton}>Checkout</Button> 
               </Grid>

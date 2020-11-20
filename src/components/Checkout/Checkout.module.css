@@ -15,7 +15,7 @@
 .paperSection{
     color: var(--main-dark);
     min-height: 400px !important;
-    padding: 1rem .5rem !important;
+    padding: 1rem 1rem !important;
 }
 
 .cartName{

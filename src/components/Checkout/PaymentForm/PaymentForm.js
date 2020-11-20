@@ -47,7 +47,11 @@ export default function PaymentForm({ setActiveStep, email, firstName }) {
     setOpenSnackbar(true) 
     }
 
-    
+   // move in checkout flow and return window to top
+   function handleStep(direction){
+    setActiveStep(direction)
+    window.scrollTo(0, 0);
+   } 
 
   return (
     <>
@@ -79,16 +83,19 @@ export default function PaymentForm({ setActiveStep, email, firstName }) {
          
         </FormControl>
       </Grid>
-      <Grid container xs={12} justify="space-around">
+      <Grid container xs={12} justify="space-evenly">
         <Button
           variant="contained"
-          color="primary"
-          onClick={() => setActiveStep({ type: "decrement" })}
+          color="secondary"
+          onClick={() => handleStep({ type: "decrement" })}
         >
          
-          <ArrowBackIosIcon fontSize="small" /> Shipping
+          <ArrowBackIosIcon fontSize="small" /> 
+          
+          Shipping
+          
         </Button>
-        <Button type="submit" variant="contained" color="primary" onClick={handleClickOpen}>
+        <Button type="submit" variant="contained" color="secondary" onClick={handleClickOpen}>
           
           Order <ArrowForwardIosIcon fontSize="small" />
         </Button>
